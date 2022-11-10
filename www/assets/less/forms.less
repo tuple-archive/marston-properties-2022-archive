@@ -1,0 +1,75 @@
+// Sprout forms
+
+.form {
+  overflow: hidden;
+  padding: percentage(60 / 1280);
+
+  .form__inner {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .form-success {
+    .journal();
+    color: @lightRed;
+    text-align: center !important;
+  }
+
+  .field, .submit {
+    width: 100%;
+  }
+
+  .field {
+    margin: 1.5rem auto;
+  }
+
+  .field.plaintext {
+  }
+
+  .field.sproutfields_email {
+  }
+
+  .heading {
+    label {
+      display: block;
+      text-align: left;
+      margin-bottom: 0.2rem;
+    }
+  }
+
+  .input {
+    input, textarea {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0.4rem 0.5rem;
+      border: 1px solid @midGrey;
+      border-radius: 4px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+
+      &:focus {
+        border-color: @lightRed;
+      }
+    }
+  }
+
+  .submit {
+    input {
+      .button();
+      background-color: transparent;
+      cursor: pointer;
+    }
+  }
+
+  input,
+  textarea,
+  select {
+    transition: box-shadow 0.2s;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px @lightRed;
+    }
+  }
+}

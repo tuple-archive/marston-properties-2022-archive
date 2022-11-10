@@ -1,0 +1,243 @@
+.results-nav-toggle,
+.results-nav-filters-toggle {
+  display: block;
+  padding: 20px;
+  .label-text();
+}
+
+.results-nav .results-nav-toggle {
+  color: white;
+  background: @lightRed;
+}
+
+.results-nav .results-nav-filters-toggle {
+  color: @textColor;
+  background: @grey;
+}
+
+.results-nav-filters {
+  display: none;
+  clear: both;
+  overflow: hidden;
+}
+
+.results-nav-filters__inner {
+  padding: 20px 22px;
+  background: @lightGrey;
+  text-align: left;
+}
+
+@media @breakMaxTablet {
+  .results-nav {
+    .clearfix();
+  }
+
+  .results-nav-toggle,
+  .results-nav-filters-toggle {
+    float: left;
+    width: 50%;
+  }
+
+  .results-nav-filters__inner {
+    padding: 20px percentage(60 / 1280);
+  }
+
+  .results-entries {
+    padding: percentage(60 / 1280);
+  }
+}
+
+@media @breakMinDesktop {
+  .results-nav-filters {
+    display: block;
+  }
+}
+
+.results-nav-toggle {
+  .theme-light-red();
+}
+
+
+
+
+////////////
+// RESULT //
+////////////
+
+.result-image {
+  position: relative;
+}
+
+.result-image-inner {
+  display: block;
+  position: relative;
+  .sentinel(percentage(9 / 16));
+  background-color: @lightGrey;
+
+  .image {
+    height: 100%;
+    .middle();
+  }
+
+  .image-overlay {
+    display: none;
+  }
+}
+
+.result-meta,
+.result-description,
+.result-reference,
+.result-button {
+  .text-margin-top();
+}
+
+.result-under-offer,
+.result-to-let {
+  display: block;
+  width: 40px;
+  height: 100%;
+
+  position: absolute;
+  left: 20px;
+  bottom: -7px;
+
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  @media @breakMinDesktop {
+    width: 50px;
+    bottom: -14px;
+  }
+}
+
+.result-under-offer {
+  background-image: data-uri('../img/under-offer.png');
+}
+
+.result-to-let {
+  background-image: data-uri('../img/to-let.png');
+}
+
+// Phones and phablets
+@media @breakMaxPhablet {
+  .result-content {
+    padding: percentage(60 / 1280);
+  }
+}
+
+// Tablet and up
+@media @breakMinTablet {
+  .result, .ais-hits--item {
+    .clearfix();
+
+    & + & {
+      .result-inner {
+        margin-top: percentage(60 / 1160);
+        padding-top: percentage(60 / 1160);
+
+        border-top: 1px solid @grey;
+      }
+    }
+  }
+
+  .result-image,
+  .result-content {
+    float: left;
+  }
+
+  .result-content {
+    text-align: left;
+  }
+
+  .result-meta {
+    li {
+      display: inline-block;
+
+      &:after {
+        content: '|';
+        margin: 0 10px;
+        color: mix(white, @textColor, 60%);
+      }
+      &:last-child:after {
+        content: '';
+        margin: 0;
+      }
+    }
+  }
+}
+
+// Tablet only
+@media @breakMinTablet and @breakMaxTablet {
+  .result-image {
+    width: percentage(428 / 1160);
+  }
+
+  .result-content {
+    width: percentage(672 / 1160);
+    margin-left: percentage(60 / 1160);
+  }
+}
+
+// Desktop
+@media @breakMinDesktop {
+  .results {
+    .clearfix();
+    padding: percentage(60 / 1280);
+  }
+
+  .results-nav,
+  .results-entries {
+    float: left;
+  }
+
+  .results-nav {
+    width: percentage(306 / 1160);
+  }
+
+  .results-nav-toggle {
+    margin-bottom: percentage(30 / 306);
+  }
+
+  .results-nav-filters-toggle {
+    display: none;
+  }
+
+  .results-entries {
+    width: percentage(794 / 1160);
+    margin-left: percentage(60 / 1160);
+  }
+
+  .result-image {
+    width: percentage(306 / 794);
+  }
+
+  .result-content {
+    width: percentage(428 / 794);
+    margin-left: percentage(60 / 794);
+  }
+}
+
+
+.result--unavailable {
+  .result-content {
+    .heading a, li, p {
+      color: @midGrey;
+    }
+
+    .button {
+      border-color: @midGrey;
+      color: @midGrey;
+
+      &:hover {
+        background-color: @midGrey;
+        color: white;
+      }
+    }
+  }
+}
+
+.results-cant-find {
+  clear: both;
+  padding-top: percentage(60 / 1160);
+}

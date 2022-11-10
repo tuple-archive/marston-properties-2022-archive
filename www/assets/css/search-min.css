@@ -1,0 +1,13 @@
+.ais-refinement-list--item,
+.ais-price-ranges--item {
+  font-weight: 600;
+  font-size: 0.8rem;
+  line-height: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.ais-refinement-list--item__active,
+.ais-price-ranges--item__active {
+  background: red;
+}
+/*# sourceMappingURL=search.css.map */

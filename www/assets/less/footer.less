@@ -1,0 +1,77 @@
+.page-footer {
+  padding: 20px 0 40px;
+  background-color: @darkRed;
+}
+
+.stamp {
+  width: 140px;
+  height: 54px;
+  margin: 20px auto;
+
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: white;
+  }
+}
+
+.page-footer-text {
+  padding: 0 20px;
+  margin: 10px auto 20px;
+
+  color: @lightRed;
+
+  a:hover {
+    color: white;
+  }
+
+  @media @breakMinDesktop {
+    ul, li {
+      display: inline-block;
+    }
+
+    li {
+      &:before {
+        content: '|';
+        margin: 0 10px;
+        color: @red;
+      }
+      &:first-child:before {
+        content: '';
+        margin: 0;
+      }
+    }
+  }
+}
+
+.page-footer-social {
+  margin: 20px auto;
+  text-align: center;
+
+  ul, li {
+    display: inline-block;
+  }
+
+  li {
+    margin: 0 10px;
+  }
+
+  a {
+    display: block;
+    width: 40px;
+    height: 40px;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: mix(@lightRed, @red);
+      transition: fill @hoverDuration;
+    }
+
+    &:hover {
+      path {
+        fill: white;
+      }
+    }
+  }
+}

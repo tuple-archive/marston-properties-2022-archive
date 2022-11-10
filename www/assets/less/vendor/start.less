@@ -1,0 +1,43 @@
+// Retina media query
+// Source: Craft CMS
+@retina-media-query: ~'only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-device-pixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx)';
+
+// Clearfix
+// Source: http://nicolasgallagher.com/micro-clearfix-hack/
+.clearfix() {
+  &:before,
+  &:after {
+    content: ' ';
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Background size mixin with Louis-Rémi’s polyfill for IE8
+// IMPORTANT: Make sure the HTC exists!
+// Source: https://github.com/louisremi/background-size-polyfill
+.background-size(@background-size) {
+  background-size: @background-size;
+  -ms-behavior: url('/assets/htc/backgroundsize.min.htc');
+}
+
+// Retina background image
+// Source: http://www.retinajs.com
+.at2x(@path, @width: auto, @height: auto) {
+  background-image: url(@path);
+  @retina-path: ~`@{path}.replace(/\.\w+$/, function(match) { return "@2x" + match; })`;
+  @media @retina-media-query {
+    background-image: url(@retina-path);
+    .background-size(contain);
+  }
+}
+
+// Opacity
+// Source: https://github.com/mdo/preboot/blob/4aab4edd85f076d50609cbe28e4fe66cc0771701/less/preboot.less#L214
+.opacity(@opacity) {
+  opacity: @opacity;
+  @opacity-ie: @opacity * 100;
+  filter: ~"alpha(opacity=@{opacity-ie})"; // IE8
+}

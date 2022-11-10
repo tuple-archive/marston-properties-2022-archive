@@ -1,0 +1,14 @@
+///////////////////////
+// ANIMATE ON SCROLL //
+///////////////////////
+
+.js.no-touch [data-show="on-scroll"] {
+  opacity: 0;
+  transform: translateY(10px) scale(0.9);
+  transition: opacity 0.4s, transform 0.4s;
+
+  &.in-view {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

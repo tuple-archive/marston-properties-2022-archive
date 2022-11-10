@@ -1,0 +1,42 @@
+.block-images {
+  .clearfix();
+}
+
+.block-image {
+  display: block;
+  float: left;
+  width: 100%;
+  overflow: hidden;
+  color: white;
+  position: relative;
+  .sentinel(percentage(3 / 4));
+
+  .image {
+    height: 100%;
+    .middle();
+  }
+
+  &--empty .image-overlay {
+    display: none;
+  }
+
+  .two-col & {
+    @media @breakMinTablet {
+      width: 50%;
+    }
+  }
+
+  .three-col & {
+    @media @breakMinPhablet {
+      width: percentage(1 / 2);
+    }
+
+    @media @breakMinTablet {
+      width: percentage(1 / 3);
+    }
+  }
+}
+
+.block-image-content {
+  .middle();
+}

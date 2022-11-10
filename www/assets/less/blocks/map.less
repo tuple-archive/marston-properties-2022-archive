@@ -1,0 +1,73 @@
+.block-map {
+  position: relative;
+
+  .theme-black();
+}
+
+.block-map-inner {
+  height: 250px;
+  // max-height: 50vh;
+  position: relative;
+}
+
+.block-map-hand-wrapper {
+  width: 22px;
+  height: 55px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  cursor: pointer;
+}
+
+.block-map-hand {
+  transform: translateY(-60px);
+}
+
+.block-map-hand-inner {
+  width: 22px;
+  height: 55px;
+  background: url('../img/maps/hand.svg') center center no-repeat;
+  background-size: contain;
+}
+
+.block-map-canvas {
+  height: 100%;
+}
+
+.block-map-content {
+  .rich-text();
+  padding: 20px;
+
+  pointer-events: none;
+
+  a {
+    pointer-events: auto;
+  }
+}
+
+@media @breakMinPhablet {
+  .block-map-inner {
+    height: 360px;
+  }
+}
+
+@media @breakMinTablet {
+  .block-map-inner {
+    height: 512px;
+  }
+
+  .block-map-content {
+    width: percentage(488 / 1280);
+    margin: percentage(30 / 1280);
+    padding: percentage(30 / 1280);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    text-align: left;
+  }
+}

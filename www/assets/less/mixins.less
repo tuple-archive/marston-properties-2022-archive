@@ -1,0 +1,54 @@
+.text-margin-top() {
+  margin-top: 7px;
+
+  @media @breakMinPhablet {
+    margin-top: 15px;
+  }
+}
+
+.rich-text() {
+  h3, p {
+    .text-margin-top();
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+.appearance(@appearance) {
+  -webkit-appearance : @appearance;
+  -khtml-appearance  : @appearance;
+  -moz-appearance    : @appearance;
+  -ms-appearance     : @appearance;
+  appearance         : @appearance;
+}
+
+.cover() {
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.top() {
+  position: absolute;
+  top: 0;
+}
+
+// Centers an element vertically and horizontally
+// @x and @y allow adjustment of the focal point (center by default)
+.middle(@x: 50%, @y: 50%) {
+  position: absolute;
+  top: @x;
+  left: @y;
+  transform+: translate((@x - 100%), (@y - 100%));
+}
+
+// Used to enforce a height in combination with .middle()
+// Provide a percentage as @height for responsive layouts
+.sentinel(@height) {
+  &:before {
+    content: '';
+    display: block;
+    padding-top: @height;
+  }
+}

@@ -1,0 +1,129 @@
+.property-transport-links {
+  span {
+    white-space: nowrap;
+  }
+}
+
+.property-documents.one-col .block-image {
+  &:before {
+    padding-top: percentage(480 / 1280) !important;
+  }
+}
+
+// ------------------------------------------------------------------------
+
+.property-ratings-inner {
+  .clearfix();
+  padding: 20px;
+
+  @media @breakMinPhablet {
+    padding: percentage(60 / 1280);
+  }
+}
+
+.property-rating {
+  width: 271px;
+  height: 311px;
+  position: relative;
+  background-repeat: no-repeat;
+
+  &.eer {
+    background-image: url('../img/energy-rating/energy-efficiency-rating.jpg');
+  }
+
+  &.eir {
+    background-image: url('../img/energy-rating/environmental-impact-rating.jpg');
+  }
+
+  @media @breakMaxPhablet {
+    margin: 20px auto 0;
+  }
+
+  @media @breakMinTablet {
+    display: inline-block;
+
+    & + & {
+      margin-left: 20px;
+    }
+  }
+}
+
+.property-rating-current,
+.property-rating-potential {
+  position: absolute;
+  top: 74px;
+  width: 36px;
+  height: 195px;
+}
+
+.property-rating-current {
+  left: 181px;
+}
+
+.property-rating-potential {
+  left: 228px;
+}
+
+.property-rating-marker {
+  position: absolute;
+  top: 0;
+  left: 12px;
+  width: 24px;
+  height: 24px;
+  padding-right: 5px;
+  color: white;
+  font: bold 12px/24px Arial, sans-serif;
+  text-align: right;
+
+  &:after {
+    right: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(136, 183, 213, 0);
+    border-width: 12px;
+    margin-top: -12px;
+  }
+}
+
+.property-rating-marker-theme(@top, @color) {
+  top: @top;
+  background-color: @color;
+  text-shadow: 0 0 2px mix(@color, black);
+
+  &:after {
+    border-right-color: @color;
+  }
+}
+
+.property-rating.eer {
+  .a { .property-rating-marker-theme(4px, #028037); }
+  .b { .property-rating-marker-theme(31px, #259b3d); }
+  .c { .property-rating-marker-theme(59px, #9dcc40); }
+  .d { .property-rating-marker-theme(86px, #f8f601); }
+  .e { .property-rating-marker-theme(113px, #f8b01e); }
+  .f { .property-rating-marker-theme(141px, #ec6923); }
+  .g { .property-rating-marker-theme(168px, #ec2021); }
+}
+
+.property-rating.eir {
+  .a { .property-rating-marker-theme(4px, #c8e4f9); }
+  .b { .property-rating-marker-theme(31px, #96c3e4); }
+  .c { .property-rating-marker-theme(59px, #96c3e4); }
+  .d { .property-rating-marker-theme(86px, #4f85c1); }
+  .e { .property-rating-marker-theme(113px, #a3a7aa); }
+  .f { .property-rating-marker-theme(141px, #919191); }
+  .g { .property-rating-marker-theme(168px, #807f84); }
+}
+
+.property-images {
+  @media @breakMaxPhablet {
+    .block-image:nth-last-child(-n+1) {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,76 @@
+////////////
+// MIXINS //
+////////////
+
+.theme(@textColor, @backgroundColor) {
+  color: @textColor;
+  background-color: @backgroundColor;
+
+  .heading, a, em {
+    color: @textColor;
+  }
+
+  .button {
+    border-color: @textColor;
+
+    &:hover {
+      background-color: @textColor;
+      color: @backgroundColor;
+    }
+  }
+
+  .inline-graphic.enforce-fill {
+    path {
+      fill: @textColor;
+    }
+  }
+}
+
+
+////////////
+// THEMES //
+////////////
+
+.theme-white {
+  .heading, a, em {
+    color: @lightRed;
+  }
+
+  .arrow path {
+    fill: @midGrey;
+  }
+
+  .inline-graphic.enforce-fill {
+    path {
+      fill: @lightRed;
+    }
+  }
+}
+
+.theme-light-red {
+  .theme(white, @lightRed);
+
+  .arrow path {
+    fill: @red;
+  }
+}
+
+.theme-red {
+  .theme(white, @red);
+
+  .arrow path {
+    fill: @darkRed;
+  }
+}
+
+.theme-dark-red {
+  .theme(white, @darkRed);
+
+  .arrow path {
+    fill: @lightRed;
+  }
+}
+
+.theme-black {
+  .theme(#333, white);
+}

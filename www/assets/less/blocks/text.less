@@ -1,0 +1,34 @@
+.block-text-inner {
+  max-width: 792px;
+  margin: 0 auto;
+  padding: 20px;
+  .rich-text();
+
+  .arrow {
+    display: inline-block;
+    width: 30px;
+    max-height: 53px;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    &.before + *, &.after {
+      margin-top: 14px;
+
+      @media @breakMinPhablet {
+        margin-top: 30px;
+      }
+    }
+
+    @media @breakMinPhablet {
+      width: 40px;
+      max-height: 71px;
+    }
+  }
+
+  @media @breakMinPhablet {
+    padding: percentage(60 / 1280);
+  }
+}

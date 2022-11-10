@@ -1,0 +1,64 @@
+body:before,
+body:after {
+  pointer-events: none;
+}
+body:before {
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99999;
+  background-image: url('../img/debug/grid.png');
+  background-repeat: repeat-y;
+  background-position: center;
+}
+@media (max-width: 1280px) {
+  body:before {
+    background-size: contain;
+  }
+}
+body:after {
+  content: 'Debug mode';
+  display: block;
+  padding: 1px;
+  position: fixed;
+  top: 2px;
+  left: 2px;
+  z-index: 100000;
+  background-color: rgba(255, 0, 255, 0.1);
+  border: 1px solid rgba(255, 0, 255, 0.8);
+  color: rgba(255, 0, 255, 0.8);
+  font: bold 11px/10px Arial;
+  text-align: left;
+  text-transform: uppercase;
+}
+a {
+  position: relative;
+}
+a:after {
+  content: 'link';
+  display: block;
+  padding: 1px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 0, 255, 0.1);
+  border: 1px solid rgba(255, 0, 255, 0.8);
+  color: rgba(255, 0, 255, 0.8);
+  font: bold 7px/7px Arial;
+  text-align: left;
+  text-transform: uppercase;
+}
+.frame {
+  border: 1px solid rgba(255, 0, 255, 0.8);
+}
+.frame-inner {
+  background-color: rgba(255, 0, 255, 0.1);
+  border: 1px solid rgba(255, 0, 255, 0.8);
+}
+/*# sourceMappingURL=debug.css.map */

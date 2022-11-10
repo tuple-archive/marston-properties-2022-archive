@@ -1,0 +1,60 @@
+.block-imagetext-text {
+  padding: 20px;
+  .rich-text();
+
+  .heading {
+    .journal();
+    color: @lightRed;
+  }
+
+  .button {
+    margin-top: 20px;
+  }
+}
+
+.block-imagetext-image {
+  position: relative;
+  overflow: hidden;
+  .sentinel(percentage(3 / 4));
+
+  .image {
+    height: 100%;
+    .middle();
+  }
+
+  .image-overlay {
+    display: none;
+  }
+}
+
+@media @breakMinPhablet {
+  .block-imagetext-text {
+    padding: percentage(60 / 1280);
+  }
+}
+
+@media @breakMinTablet {
+  .block-imagetext {
+    display: table;
+    width: 100%;
+
+    &.even {
+      direction: rtl;
+    }
+  }
+
+  .block-imagetext-image, .block-imagetext-text {
+    display: table-cell;
+    vertical-align: top;
+    direction: ltr;
+  }
+
+  .block-imagetext-image {
+    width: percentage(732 / 1280);
+  }
+
+  .block-imagetext-text {
+    width: percentage(548 / 1280);
+    text-align: left;
+  }
+}
